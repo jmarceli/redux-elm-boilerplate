@@ -1,8 +1,8 @@
 import { Updater } from 'redux-elm';
 
-const initialModel = {
-  greeted: false,
-};
+export const init = title => ({
+  title,
+});
 
-export default new Updater(initialModel)
+export default new Updater(init('uninitialized'))
   .toReducer();

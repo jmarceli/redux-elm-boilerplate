@@ -1,8 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, compose } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { createStore, compose, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 import reduxElm from 'redux-elm';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 export default (containerDomId) => {
   const storeFactory = compose(
@@ -14,18 +16,24 @@ export default (containerDomId) => {
 
   return (View, updater) => {
     if (!store) {
-      store = storeFactory(updater);
+      store = storeFactory(combineReducers({
+        root: updater,
+        routing: routerReducer,
+      }));
     } else {
-      store.replaceReducer(updater);
+      store.replaceReducer(combineReducers({
+        root: updater,
+        routing: routerReducer,
+      }));
     }
-
-    const ConnectedView = connect(appState => ({
-      model: appState,
-    }))(View);
+    const history = syncHistoryWithStore(browserHistory, store);
 
     render((
       <Provider store={store}>
-        <ConnectedView />
+        <View
+          history={history}
+          dispatch={store.dispatch}
+        />
       </Provider>
     ), document.getElementById(containerDomId));
   };

@@ -6,7 +6,7 @@ export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-
   <article>
     <div>
       <section className={`${styles.textSection} ${styles.centered}`}>
-        <h2>Start your next react project in seconds</h2>
+        <h2>{model.title}</h2>
         <p>A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</p>
       </section>
       <section className={styles.textSection}>
