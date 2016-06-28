@@ -1,15 +1,15 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "redux-elm-boilerplate",
+  "version": "0.0.1",
+  "description": "A highly modular application structure based on redux-elm package (Elm architecture for Redux) and react-boilerplate (most popular Redux foundation). ",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git://github.com/jmarceli/redux-elm-boilerplate.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
+  "author": "Jan Grzegorowski",
   "license": "MIT",
   "scripts": {
     "analyze": "node ./internals/scripts/analyze.js",
