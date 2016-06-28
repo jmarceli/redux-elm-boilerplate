@@ -1,23 +1,32 @@
 import React from 'react';
 import { view } from 'redux-elm';
-import styles from './styles.css';
+import { Form, FormGroup, ControlLabel, FormControl, InputGroup } from 'react-bootstrap';
 
 export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-vars
   <article>
-    <div>
-      <section className={`${styles.textSection} ${styles.centered}`}>
+    <section className="jumbotron">
+      <div className="container">
         <h2>{model.title}</h2>
-        <p>A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</p>
-      </section>
-      <section className={styles.textSection}>
+        <p>A highly modular application structure based on redux-elm package (Elm architecture for Redux) and react-boilerplate (most popular Redux foundation).</p>
+      </div>
+    </section>
+    {model.withGithub
+    ? <section>
+      <div className="container">
         <h2>Try me!</h2>
-        <form className={styles.usernameForm}>
-          <label htmlFor="username">Show Github repositories by
-            <span className={styles.atPrefix}>@</span>
-            <input id="username" className={styles.input} type="text" placeholder="jmarceli" />
-          </label>
-        </form>
-      </section>
-    </div>
+        <Form inline>
+          <FormGroup>
+            <ControlLabel htmlFor="username">Show Github repositories by</ControlLabel>
+            {' '}
+            <InputGroup>
+              <InputGroup.Addon>@</InputGroup.Addon>
+              <FormControl type="text" id="username" placeholder="jmarceli" />
+            </InputGroup>
+          </FormGroup>
+        </Form>
+      </div>
+    </section>
+    : ''
+    }
   </article>
 ));

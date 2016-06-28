@@ -3,8 +3,13 @@ import homeUpdater, { init as homeInit } from '../home-page/updater';
 
 export const initialModel = {
   // models are keyed by modelKey defined in src/routing.js
-  homePage: homeInit('Start your next react project in seconds'),
-  homePage2: homeInit('This is secondary home page'),
+  homePage: homeInit({
+    title: 'Start your next react project in seconds',
+    withGithub: true,
+  }),
+  homePage2: homeInit({
+    title: 'This is secondary home page',
+  }),
 };
 
 export default new Updater(initialModel)

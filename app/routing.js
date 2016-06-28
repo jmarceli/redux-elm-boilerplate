@@ -4,8 +4,8 @@ import { forwardTo } from 'redux-elm';
 import { Router, Route, IndexRoute } from 'react-router';
 
 // import required components
+import Template from './pages/template';
 import HomePage from './pages/home-page/view';
-import Template from './template';
 
 /**
  * Prepare component for router
