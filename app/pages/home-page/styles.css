@@ -1,3 +1,8 @@
+.CallToAction {
+  display: block;
+  margin: 48px auto;
+}
+
 .textSection {
   margin: 3em auto;
 }

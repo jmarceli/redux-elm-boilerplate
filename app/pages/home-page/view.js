@@ -1,6 +1,7 @@
 import React from 'react';
 import { view } from 'redux-elm';
-import { Form, FormGroup, ControlLabel, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Form, FormGroup, ControlLabel, FormControl, InputGroup } from 'react-bootstrap';
+import styles from './styles.css';
 
 export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-vars
   <article>
@@ -24,6 +25,7 @@ export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-
             </InputGroup>
           </FormGroup>
         </Form>
+        <Button bsStyle="primary" bsSize="large" handleRoute={this.openFeaturesPage} className={styles.CallToAction}>Features</Button>
       </div>
     </section>
     : ''
