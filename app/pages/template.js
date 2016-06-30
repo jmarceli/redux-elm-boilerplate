@@ -13,25 +13,37 @@ import styles from './styles.css';
 export default class Template extends React.Component {
   render() {
     return (
-      <div style={{ paddingTop: 50 }}>
-        <Navbar fixedTop className={styles.Navbar}>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <Link to="/">Redux-elm-boilerplate</Link>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav pullRight>
-              <NavItem eventKey={1} href="/home">Home</NavItem>
-              <NavItem eventKey={2} href="/home2">Home 2</NavItem>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+      <section style={{ paddingTop: 50 }}>
+        <header>
+          <Navbar fixedTop className={styles.Navbar}>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <Link to="/">Redux-elm-boilerplate</Link>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav pullRight>
+                <NavItem eventKey={1} href="/home">Home</NavItem>
+                <NavItem eventKey={2} href="/home2">Home 2</NavItem>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </header>
         <main>
           {this.props.children}
         </main>
-      </div>
+        <footer>
+          <Navbar className={styles.footerNavbar}>
+            <Nav>
+              <NavItem>This project is licensed under the MIT license.</NavItem>
+            </Nav>
+            <Nav pullRight>
+              <NavItem>by Jan Grzegorowski</NavItem>
+            </Nav>
+          </Navbar>
+        </footer>
+      </section>
     );
   }
 }
