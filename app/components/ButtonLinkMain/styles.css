@@ -1,0 +1,9 @@
+.wrapper {
+  display: block;
+  text-align: center;
+}
+
+.base {
+  display: inline-block;
+  margin: 48px auto;
+}
