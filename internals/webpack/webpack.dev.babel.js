@@ -28,6 +28,7 @@ const plugins = [
 module.exports = require('./webpack.base.babel')({
   // Add hot reloading in development
   entry: [
+    'babel-polyfill', // Necessary in order to use generator functions (for Saga)
     'eventsource-polyfill', // Necessary for hot reloading with IE
     'webpack-hot-middleware/client',
     path.join(process.cwd(), 'app/app.js'), // Start with js/app.js
