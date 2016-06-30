@@ -3,7 +3,8 @@
  */
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router'; // just for navigation
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import NavLink from '../NavLink'; // just for navigation
+import { Navbar, Nav } from 'react-bootstrap';
 // You may use modularized styles for overriding Bootstrap defaults
 import styles from './styles.css';
 
@@ -23,8 +24,8 @@ function CustomNavbar(props) {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="/home">Home</NavItem>
-          <NavItem eventKey={2} href="/home2">Home 2</NavItem>
+          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/home2">Home 2</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
