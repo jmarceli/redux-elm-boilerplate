@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 // import required components
 import Template from './pages/template';
 import HomePage from './pages/home-page/view';
+import SimplePage from './pages/simple-page/view';
 
 /**
  * Prepare component for router
@@ -20,6 +21,7 @@ const connectView = (View, modelKey, ...nesting) =>
 // TODO: Define all pages available for routing
 const Home = connectView(HomePage, 'homePage', 'HomePage');
 const Home2 = connectView(HomePage, 'homePage2', 'HomePage2');
+const Features = connectView(SimplePage, 'simplePage', 'SimplePage');
 
 // TODO: Define routes for your App
 // they will be used by app/pages/root/view.js
@@ -29,6 +31,7 @@ export default history => (
       <IndexRoute component={Home} />
       <Route path="home" component={Home} />
       <Route path="home2" component={Home2} />
+      <Route path="features" component={Features} />
     </Route>
   </Router>
 );

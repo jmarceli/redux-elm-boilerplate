@@ -14,7 +14,7 @@ export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-
     {model.withGithub
     ? <section>
       <div className="container">
-        <h2>Try me!</h2>
+        <h2 className="page-header">Try me!</h2>
         <Form inline>
           <FormGroup>
             <ControlLabel htmlFor="username">Show Github repositories by</ControlLabel>
