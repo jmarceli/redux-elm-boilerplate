@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import styles from './styles.css';
 
-function FeaturesDescription(props) {
+const FeaturesDescription = (props) => {
   const className = props.className ? `${styles.base} ${props.className}` : styles.base;
 
   return (
@@ -33,7 +33,7 @@ function FeaturesDescription(props) {
       </ListGroupItem>
     </ListGroup>
   );
-}
+};
 
 FeaturesDescription.propTypes = {
   className: PropTypes.string,

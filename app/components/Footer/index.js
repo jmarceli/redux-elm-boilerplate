@@ -6,7 +6,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 // You may use modularized styles for overriding Bootstrap defaults
 import styles from './styles.css';
 
-function Footer(props) {
+const Footer = (props) => {
   const className = props.className ? `${styles.base} ${props.className}` : styles.base;
 
   return (
@@ -19,7 +19,7 @@ function Footer(props) {
       </Nav>
     </Navbar>
   );
-}
+};
 
 Footer.propTypes = {
   className: PropTypes.string,

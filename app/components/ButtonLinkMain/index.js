@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './styles.css';
 
-function ButtonLinkMain(props) {
+const ButtonLinkMain = (props) => {
   const className = props.className ? `${styles.wrapper} ${props.className}` : styles.wrapper;
 
   return (
@@ -12,7 +12,7 @@ function ButtonLinkMain(props) {
       </Link>
     </div>
   );
-}
+};
 
 ButtonLinkMain.propTypes = {
   className: PropTypes.string,

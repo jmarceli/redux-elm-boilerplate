@@ -8,10 +8,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 // You may use modularized styles for overriding Bootstrap defaults
 import styles from './styles.css';
 
-// TODO: maybe there is some better implementation
-// e.g. using stateless functional components
-// eslint-disable-next-line react/prefer-stateless-function
-function CustomNavbar(props) {
+const CustomNavbar = (props) => {
   const className = props.className ? `${styles.base} ${props.className}` : styles.base;
 
   return (
@@ -30,7 +27,7 @@ function CustomNavbar(props) {
       </Navbar.Collapse>
     </Navbar>
   );
-}
+};
 
 CustomNavbar.propTypes = {
   className: PropTypes.string,
