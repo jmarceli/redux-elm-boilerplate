@@ -2,14 +2,5 @@
   border-left: none;
   border-right: none;
   border-radius: 0;
-}
-
-.Navbar {
-  coposes: base;
   border-top: none;
-}
-
-.footerNavbar {
-  coposes: base;
-  border-bottom: none;
 }
