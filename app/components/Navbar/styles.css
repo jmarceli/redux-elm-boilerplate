@@ -4,3 +4,8 @@
   border-radius: 0;
   border-top: none;
 }
+
+/* Example of bootstrap css overriding */
+:global(.navbar-default .navbar-brand) {
+  color: red;
+}
