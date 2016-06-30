@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import reduxElm from 'redux-elm';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
 export default (containerDomId) => {
   const storeFactory = compose(
@@ -15,16 +16,16 @@ export default (containerDomId) => {
   let store;
 
   return (View, updater) => {
+    const reducers = combineReducers({
+      root: updater,
+      routing: routerReducer,
+      form: formReducer,
+    });
+
     if (!store) {
-      store = storeFactory(combineReducers({
-        root: updater,
-        routing: routerReducer,
-      }));
+      store = storeFactory(reducers);
     } else {
-      store.replaceReducer(combineReducers({
-        root: updater,
-        routing: routerReducer,
-      }));
+      store.replaceReducer(reducers);
     }
     const history = syncHistoryWithStore(browserHistory, store);
 

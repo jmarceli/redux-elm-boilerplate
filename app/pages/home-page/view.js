@@ -1,9 +1,9 @@
 import React from 'react';
-import { view } from 'redux-elm';
-import { Form, FormGroup, ControlLabel, FormControl, InputGroup } from 'react-bootstrap';
+import { view, forwardTo } from 'redux-elm';
 import ButtonLinkMain from '../../components/ButtonLinkMain';
+import GithubForm from '../../containers/GithubForm';
 
-export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-vars
+export default view(({ model, dispatch }) => (
   <article>
     <section className="jumbotron">
       <div className="container">
@@ -15,16 +15,7 @@ export default view(({ model, dispatch }) => ( // eslint-disable-line no-unused-
     ? <section>
       <div className="container">
         <h2 className="page-header">Try me!</h2>
-        <Form inline>
-          <FormGroup>
-            <ControlLabel htmlFor="username">Show Github repositories by</ControlLabel>
-            {' '}
-            <InputGroup>
-              <InputGroup.Addon>@</InputGroup.Addon>
-              <FormControl type="text" id="username" placeholder="jmarceli" />
-            </InputGroup>
-          </FormGroup>
-        </Form>
+        <GithubForm model={model.githubForm} dispatch={forwardTo(dispatch, 'GithubForm')} />
         {/* Example onClick callback */}
         <ButtonLinkMain href="/features" onClick={() => { console.log('Features'); }}>
           Features

@@ -4,10 +4,10 @@
 
 import { init } from '../updater';
 
-import expect from 'expect';
+import { expect } from 'chai';
 
 describe('HomePage updater', () => {
   it('has correct default values', () => {
-    expect(init()).toEqual({ title: false, withGithub: false });
+    expect(init()).to.have.all.keys(['title', 'withGithub', 'githubForm']);
   });
 });
