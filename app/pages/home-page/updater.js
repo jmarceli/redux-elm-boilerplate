@@ -1,12 +1,14 @@
 import { Updater } from 'redux-elm';
-import githubFormUpdater, { init as githubFormInit } from '../../containers/GithubForm/updater';
+import repoViewerUpdater, { init as repoViewerInit } from '../../containers/RepoViewer/updater';
 
 export const init = ({ title, withGithub } = { title: false, withGithub: false }) => ({
   title,
   withGithub,
-  githubForm: githubFormInit(),
+  repoViewer: repoViewerInit(),
 });
 
 export default new Updater(init())
-  .case('GithubForm', (model, action) => ({ ...model, githubForm: githubFormUpdater(model.githubForm, action) }))
+  .case('RepoViewer', (model, action) => ({
+    ...model, repoViewer: repoViewerUpdater(model.repoViewer, action)
+  }))
   .toReducer();

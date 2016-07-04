@@ -7,7 +7,7 @@
     "mocha": true
   },
   "rules": {
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed"],
     "comma-dangle": 0,
     "func-names": 0,
     "no-alert": 0,

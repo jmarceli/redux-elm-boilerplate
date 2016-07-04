@@ -1,22 +1,17 @@
+/*
+ * Technically this should be a container (because of redux store interaction),
+ * but from redux-elm point of view this is just a component which calls
+ * submit function passed by props and doesn't modify `root` redux store key
+ */
 import React, { PropTypes } from 'react';
 import { view } from 'redux-elm';
 import { reduxForm } from 'redux-form';
 import { Button, Form, FormGroup, ControlLabel, FormControl, InputGroup } from 'react-bootstrap';
 
-// standard submit mehod
-// see: http://redux-form.com/5.2.5/#/api/props?_k=bc4k2f#-handlesubmit-eventorsubmit-function-
-function submit(values, dispatch) {
-  // redux-form expects Promise as submit result in order to switch submitting state
-  // see: https://github.com/yelouafi/redux-saga/issues/161#issuecomment-191312502
-  return new Promise((resolve, reject) => {
-    dispatch({ type: 'Submit', data: values, resolve, reject });
-  });
-}
-
 let GithubForm = (props) => {
   // props from redux-form (divided into two lines for readability
   const { fields: { username } } = props;
-  const { submitting, handleSubmit } = props;
+  const { submitting, handleSubmit, submit } = props;
 
   return (
     <Form inline onSubmit={handleSubmit(submit)}>
@@ -38,6 +33,7 @@ GithubForm.propTypes = {
   fields: PropTypes.object,
   submitting: PropTypes.bool,
   handleSubmit: PropTypes.func,
+  submit: PropTypes.func,
 };
 
 // redux-form binding
@@ -52,6 +48,6 @@ GithubForm = reduxForm({
 }, undefined, mapDispatchToProps)(GithubForm);
 
 // Wrap React Component in standard redux-elm function
-export default view(({ model, dispatch }) => (
-  <GithubForm model={model} dispatch={dispatch} />
+export default view(({ model, dispatch, submit }) => (
+  <GithubForm model={model} dispatch={dispatch} submit={submit} />
 ));
