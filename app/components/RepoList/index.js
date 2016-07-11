@@ -4,9 +4,9 @@
 import React, { PropTypes } from 'react';
 import { Glyphicon, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-const RepoList = (props) => (
-  <ListGroup className={props.className}>
-    {props.repos.map((repo) =>
+const RepoList = ({ repos, className }) => (
+  <ListGroup className={className}>
+    {repos.map((repo) =>
       <ListGroupItem key={repo.id}>
         {/* JSON.stringify(repo) */}
         <a href={repo.url}>{repo.name}</a>
