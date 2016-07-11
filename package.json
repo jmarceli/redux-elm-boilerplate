@@ -1,7 +1,7 @@
 {
   "name": "redux-elm-boilerplate",
   "version": "0.0.1",
-  "description": "A highly modular application structure based on redux-elm package (Elm architecture for Redux) and react-boilerplate (most popular Redux foundation). ",
+  "description": "A highly modular application structure based on redux-elm package (Elm architecture for Redux) and react-boilerplate (most popular Redux foundation).",
   "repository": {
     "type": "git",
     "url": "git://github.com/jmarceli/redux-elm-boilerplate.git"

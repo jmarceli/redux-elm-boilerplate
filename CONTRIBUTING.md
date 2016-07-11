@@ -1,6 +1,6 @@
-# Contributing to react-boilerplate
+# Contributing to redux-elm-boilerplate
 
-Love react-boilerplate and want to help? Thanks so much, there's something to do for everybody!
+Love redux-elm-boilerplate and want to help? Thanks so much, there's something to do for everybody!
 
 Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
@@ -8,7 +8,7 @@ Following these guidelines helps to communicate that you respect the time of the
 
 ## Using the issue tracker
 
-The [issue tracker](https://github.com/mxstbr/react-boilerplate/issues) is
+The [issue tracker](https://github.com/jmarceli/redux-elm-boilerplate/issues) is
 the preferred channel for [bug reports](#bugs), [features requests](#features)
 and [submitting pull requests](#pull-requests).
 
@@ -76,11 +76,11 @@ included in the project:
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/react-boilerplate.git
+   git clone https://github.com/<your-username>/redux-elm-boilerplate.git
    # Navigate to the newly cloned directory
-   cd react-boilerplate
+   cd redux-elm-boilerplate
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/mxstbr/react-boilerplate.git
+   git remote add upstream https://github.com/jmarceli/redux-elm-boilerplate.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -96,7 +96,7 @@ included in the project:
    git checkout -b <topic-branch-name>
    ```
 
-4. Commit your changes in logical chunks. Please adhere to these [git commit message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) or your code is unlikely be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public.
+4. Commit your changes in logical chunks. Please adhere to Karma [commit message guidelines](http://karma-runner.github.io/0.10/dev/git-commit-msg.html) or your code is unlikely be merged into the main project. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public.
 
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
