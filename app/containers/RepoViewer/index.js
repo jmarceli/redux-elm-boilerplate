@@ -2,6 +2,8 @@ import React from 'react';
 import { view, forwardTo } from 'redux-elm';
 import GithubForm from '../../components/GithubForm';
 import RepoList from '../../components/RepoList';
+// You may use modularized styles for overriding Bootstrap defaults
+import styles from './styles.css';
 
 export default view(({ model, dispatch }) => {
   function submit(values) {
@@ -20,7 +22,7 @@ export default view(({ model, dispatch }) => {
         model={model.githubForm}
         dispatch={forwardTo(dispatch, 'GithubForm')}
       />
-      <RepoList repos={model.repoList} />
+      <RepoList repos={model.repoList} className={styles.list} />
     </div>
   );
 });

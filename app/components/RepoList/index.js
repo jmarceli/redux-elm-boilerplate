@@ -5,7 +5,7 @@ import React, { PropTypes } from 'react';
 import { Glyphicon, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const RepoList = (props) => (
-  <ListGroup>
+  <ListGroup className={props.className}>
     {props.repos.map((repo) =>
       <ListGroupItem key={repo.id}>
         {/* JSON.stringify(repo) */}
@@ -22,6 +22,7 @@ const RepoList = (props) => (
 
 RepoList.propTypes = {
   repos: PropTypes.array,
+  className: PropTypes.string
 };
 
 export default RepoList;
