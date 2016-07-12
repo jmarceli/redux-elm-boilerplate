@@ -129,6 +129,7 @@
     "history": "^2.1.0",
     "immutable": "^3.8.1",
     "ip": "^1.1.2",
+    "isomorphic-fetch": "^2.2.1",
     "minimist": "^1.2.0",
     "react": "^15.0.1",
     "react-bootstrap": "^0.29.5",
@@ -143,8 +144,7 @@
     "redux-immutable": "^3.0.6",
     "redux-saga": "^0.10.0",
     "reselect": "^2.5.1",
-    "sanitize.css": "^3.3.0",
-    "whatwg-fetch": "^1.0.0"
+    "sanitize.css": "^3.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.7",
