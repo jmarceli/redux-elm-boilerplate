@@ -28,7 +28,16 @@ module.exports = {
     path: outputPath,
     library: '[name]',
   },
+  module: {
+    loaders: [{
+      test: /\.json$/,
+      loader: 'json-loader',
+    }]
+  },
   plugins: [
-    new webpack.DllPlugin({ name: '[name]', path: join(outputPath, '[name].json') }), // eslint-disable-line no-new
+    new webpack.DllPlugin({
+      name: '[name]',
+      path: join(outputPath, '[name].json')
+    }),
   ],
 };
