@@ -16,6 +16,10 @@ module.exports = {
       presets: ['es2015', 'react', 'stage-0'],
     },
   },
+  eslint: {
+    // eslint loader options
+    configFile: '.eslintrc'
+  },
   module: {
     // Some libraries don't like being run through babel.
     // If they gripe, put them here.
@@ -25,7 +29,7 @@ module.exports = {
     ],
     preLoaders: [
       { test: /\.js$/,
-        loader: 'isparta',
+        loaders: ['isparta', 'eslint'],
         include: path.resolve('app/'),
       },
     ],
