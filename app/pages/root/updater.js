@@ -22,7 +22,13 @@ export const initialModel = {
 
 export default new Updater(initialModel)
   // each case should contain one of the action identifiers defined in src/routing.js
-  .case('HomePage', (model, action) => ({ ...model, homePage: homeUpdater(model.homePage, action) }))
-  .case('HomePage2', (model, action) => ({ ...model, homePage2: homeUpdater(model.homePage2, action) }))
-  .case('SimplePage', (model, action) => ({ ...model, simplePage: simpleUpdater(model.simplePage, action) }))
+  .case('HomePage', (model, action) => (
+    { ...model, homePage: homeUpdater(model.homePage, action) }
+  ))
+  .case('HomePage2', (model, action) => (
+    { ...model, homePage2: homeUpdater(model.homePage2, action) }
+  ))
+  .case('SimplePage', (model, action) => (
+    { ...model, simplePage: simpleUpdater(model.simplePage, action) }
+  ))
   .toReducer();

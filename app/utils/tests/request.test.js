@@ -36,13 +36,13 @@ describe('.request', () => {
     });
 
     // done argument is required to handle promises tests
-    it('should format the response correctly', () => {
-      return request('/validurl')
+    it('should format the response correctly', () => (
+      request('/validurl')
         .then(result => {
           expect(result.data).to.eql(okJSON); // deep equal
           expect(result.meta.response.status).to.equal(200);
-        });
-    });
+        })
+    ));
   });
 
   describe('error response', () => {
@@ -60,12 +60,12 @@ describe('.request', () => {
       window.fetch.returns(Promise.resolve(res));
     });
 
-    it('should catch error response', () => {
-      return request('/invalidurl')
+    it('should catch error response', () => (
+      request('/invalidurl')
         .then(result => {
           expect(result.errors[0]).to.eql(errJSON);
           expect(result.meta.response.status).to.equal(404);
-        });
-    });
+        })
+    ));
   });
 });

@@ -7,7 +7,11 @@ const ButtonLinkMain = (props) => {
 
   return (
     <div className={className}>
-      <Link to={props.href} className={`btn btn-primary btn-lg ${styles.base}`} onClick={props.onClick}>
+      <Link
+        to={props.href}
+        className={`btn btn-primary btn-lg ${styles.base}`}
+        onClick={props.onClick}
+      >
         {props.children}
       </Link>
     </div>

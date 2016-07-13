@@ -22,12 +22,10 @@ function checkStatus(response) {
  * @return {object}          The parsed JSON from the request
  */
 function handleSuccess(response) {
-  return response.json().then(json => {
-    return {
-      data: json,
-      meta: { response },
-    };
-  });
+  return response.json().then(json => ({
+    data: json,
+    meta: { response },
+  }));
 }
 
 /**
@@ -36,12 +34,10 @@ function handleSuccess(response) {
  * @return {object}          The parsed JSON from the request
  */
 function handleError(error) {
-  return error.response.json().then(json => {
-    return {
-      errors: [json],
-      meta: { response: error.response },
-    };
-  });
+  return error.response.json().then(json => ({
+    errors: [json],
+    meta: { response: error.response },
+  }));
 }
 
 /**
@@ -50,9 +46,9 @@ function handleError(error) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export const request = (url, options = {}) => {
-  return fetch(url, options)
+export const request = (url, options = {}) => (
+  fetch(url, options)
     .then(checkStatus) // this will throw error for HTTP error responses
     .then(handleSuccess)
-    .catch(handleError);
-};
+    .catch(handleError)
+);
