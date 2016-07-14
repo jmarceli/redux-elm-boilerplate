@@ -11,7 +11,16 @@ module.exports = (options) => ({
     path: path.resolve(process.cwd(), 'build'),
     publicPath: '/',
   }, options.output), // Merge with env dependent settings
+  eslint: {
+    // see https://github.com/MoOx/eslint-loader
+    emitWarning: true,
+  },
   module: {
+    preLoaders: [{
+      test: /\.js$/, // Transform all .js files required somewhere with Babel
+      loader: 'eslint',
+      exclude: /node_modules/,
+    }],
     loaders: [{
       test: /\.js$/, // Transform all .js files required somewhere with Babel
       loader: 'babel',
