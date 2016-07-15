@@ -14,6 +14,7 @@ module.exports = {
   isparta: {
     babel: {
       presets: ['es2015', 'react', 'stage-0'],
+      plugins: 'rewire',
     },
   },
   module: {
@@ -40,7 +41,7 @@ module.exports = {
         loader: 'imports?define=>false,require=>false',
       },
       { test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader?plugins=babel-plugin-rewire',
         exclude: [/node_modules/],
       },
       { test: /\.jpe?g$|\.gif$|\.png$/i,
