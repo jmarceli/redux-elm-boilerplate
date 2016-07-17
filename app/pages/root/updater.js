@@ -1,7 +1,7 @@
 import React from 'react';
 import { Updater } from 'redux-elm';
-import homeUpdater, { init as homeInit } from '../home-page/updater';
-import simpleUpdater, { init as simpleInit } from '../simple-page/updater';
+import homeUpdater, { init as homeInit } from '../home/updater';
+import simpleUpdater, { init as simpleInit } from '../simple/updater';
 import FeaturesDescription from '../../components/FeaturesDescription';
 
 // TODO: initialize all available pages here

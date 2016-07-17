@@ -5,8 +5,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 // import required components
 import Template from './pages/template/view';
-import HomePage from './pages/home-page/view';
-import SimplePage from './pages/simple-page/view';
+import HomePage from './pages/home/view';
+import SimplePage from './pages/simple/view';
 
 /**
  * Prepare component for router
