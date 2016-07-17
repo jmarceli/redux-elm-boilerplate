@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { forwardTo } from 'redux-elm';
+import { view, forwardTo } from 'redux-elm';
 import { Router, Route, IndexRoute } from 'react-router';
 
 // import required components
-import Template from './pages/template/view';
-import HomePage from './pages/home/view';
-import SimplePage from './pages/simple/view';
+import Template from '../pages/template/view';
+import HomePage from '../pages/home/view';
+import SimplePage from '../pages/simple/view';
 
 /**
  * Prepare component for router
@@ -26,7 +26,7 @@ const Features = connectView(SimplePage, 'simplePage', 'SimplePage');
 
 // TODO: Define routes for your App
 // they will be used by app/pages/root/view.js
-export default history => (
+const buildRouting = history => (
   <Router history={history}>
     <Route path="/" component={PageTemplate}>
       <IndexRoute component={Home} />
@@ -36,3 +36,6 @@ export default history => (
     </Route>
   </Router>
 );
+
+// Just exports routes defined in routing file
+export default view(({ history }) => buildRouting(history));

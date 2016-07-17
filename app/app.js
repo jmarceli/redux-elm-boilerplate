@@ -7,13 +7,13 @@ import boot from './boilerplate';
 const run = boot('app');
 
 const start = () => run(
-  require('./pages/root/view').default, // eslint-disable-line global-require
-  require('./pages/root/updater').default // eslint-disable-line global-require
+  require('./router/view').default, // eslint-disable-line global-require
+  require('./router/updater').default // eslint-disable-line global-require
 );
 
 if (module.hot) {
-  module.hot.accept('./pages/root/view', start);
-  module.hot.accept('./pages/root/updater', start);
+  module.hot.accept('./router/view', start);
+  module.hot.accept('./router/updater', start);
 }
 
 start();
