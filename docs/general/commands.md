@@ -16,6 +16,12 @@ history irreversibly by accident.
 ## Development
 
 ```Shell
+$ npm run build:dll
+```
+
+Precompile `node_modules/` content. If you want to make some temporary manual changes inside `node_modules/` directory files you will have to run `npm run build:dll` and then restart dev server before these changes will be visible in App.
+
+```Shell
 $ npm run start
 ```
 

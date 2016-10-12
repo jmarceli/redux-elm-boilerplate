@@ -13,7 +13,7 @@ module.exports = {
   devtool: 'inline-source-map',
   isparta: {
     babel: {
-      presets: ['es2015', 'react', 'stage-0'],
+      presets: [['es2015', { modules: false }], 'react', 'stage-0'],
       plugins: 'rewire',
     },
   },
